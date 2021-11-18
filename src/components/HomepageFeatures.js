@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <p>一行命令<br/>一整个项目<br/>快速开发</p>
       </>
     ),
   },
@@ -18,8 +17,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <p>特清晰<br/>不会有不会<br/>好看的很</p>
       </>
     ),
   },
@@ -28,8 +26,7 @@ const FeatureList = [
     Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <p>快<br/>飞的快<br/>更快</p>
       </>
     ),
   },
