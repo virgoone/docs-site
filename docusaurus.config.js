@@ -78,14 +78,6 @@ const config = {
     }),
     plugins: [
       [
-        '@docusaurus/plugin-sitemap',
-        {
-          changefreq: 'weekly',
-          priority: 0.5,
-          trailingSlash: true,
-        },
-      ],
-      [
         '@docusaurus/plugin-client-redirects',
         {
           redirects: [
