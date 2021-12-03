@@ -77,7 +77,6 @@ const config = {
       }
     }),
     plugins: [
-      '@docusaurus/plugin-google-gtag',
       [
         '@docusaurus/plugin-sitemap',
         {
