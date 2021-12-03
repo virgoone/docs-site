@@ -10,7 +10,7 @@ const config = {
   tagline: 'Lark Tools are cool',
   url: 'https://lark-tools.netifly.app',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'lark-org', // Usually your GitHub org/user name.
@@ -70,7 +70,38 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      gtag: {
+        trackingID: 'G-VQL73B4GPD',
+        // Optional fields.
+        anonymizeIP: true, // Should IPs be anonymized?
+      }
     }),
+    plugins: [
+      '@docusaurus/plugin-google-gtag',
+      [
+        '@docusaurus/plugin-sitemap',
+        {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: true,
+        },
+      ],
+      [
+        '@docusaurus/plugin-client-redirects',
+        {
+          redirects: [
+            {
+              to: '/docs/lark-cli-service/开始', // string
+              from: '/docs/lark-cli-service', // string | string[]
+            },
+            {
+              to: '/docs/lark-cli/入门', // string
+              from: '/docs/lark-cli', // string | string[]
+            },
+          ],
+        },
+      ],
+    ],
 };
 
 module.exports = config;

@@ -1277,6 +1277,23 @@
     url-loader "^4.1.1"
     webpack "^5.61.0"
 
+"@docusaurus/plugin-client-redirects@^2.0.0-beta.9":
+  version "2.0.0-beta.9"
+  resolved "https://registry.npmmirror.com/@docusaurus/plugin-client-redirects/download/@docusaurus/plugin-client-redirects-2.0.0-beta.9.tgz#4ac5cd497d31c45728df6bb1c61326fc4062d969"
+  integrity sha1-SsXNSX0xxFco32uxxhMm/EBi2Wk=
+  dependencies:
+    "@docusaurus/core" "2.0.0-beta.9"
+    "@docusaurus/types" "2.0.0-beta.9"
+    "@docusaurus/utils" "2.0.0-beta.9"
+    "@docusaurus/utils-common" "2.0.0-beta.9"
+    "@docusaurus/utils-validation" "2.0.0-beta.9"
+    chalk "^4.1.2"
+    eta "^1.12.3"
+    fs-extra "^10.0.0"
+    globby "^11.0.2"
+    lodash "^4.17.20"
+    tslib "^2.3.1"
+
 "@docusaurus/plugin-content-blog@2.0.0-beta.9":
   version "2.0.0-beta.9"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.0.0-beta.9.tgz#d72a32013232610552cbc45509ba2ddaea653690"
@@ -1369,10 +1386,17 @@
   dependencies:
     "@docusaurus/core" "2.0.0-beta.9"
 
-"@docusaurus/plugin-sitemap@2.0.0-beta.9":
+"@docusaurus/plugin-google-gtag@^2.0.0-beta.9":
   version "2.0.0-beta.9"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.9.tgz#4c944b6fc4e8fa4625a6fd985ec21d6455c31647"
-  integrity sha512-p6Qc1vo/yb1v767/u0E72inkGKayx77HDKsDOGrNj2IH0db0cMsskBLeKYcDfVz5+dtmFrR+lubINp7TyofkvA==
+  resolved "https://registry.npmmirror.com/@docusaurus/plugin-google-gtag/download/@docusaurus/plugin-google-gtag-2.0.0-beta.9.tgz#70de97bb5a25bc10969941ec257d694db0abed79"
+  integrity sha1-cN6Xu1olvBCWmUHsJX1pTbCr7Xk=
+  dependencies:
+    "@docusaurus/core" "2.0.0-beta.9"
+
+"@docusaurus/plugin-sitemap@2.0.0-beta.9", "@docusaurus/plugin-sitemap@^2.0.0-beta.9":
+  version "2.0.0-beta.9"
+  resolved "https://registry.npmmirror.com/@docusaurus/plugin-sitemap/download/@docusaurus/plugin-sitemap-2.0.0-beta.9.tgz#4c944b6fc4e8fa4625a6fd985ec21d6455c31647"
+  integrity sha1-TJRLb8To+kYlpv2YXsIdZFXDFkc=
   dependencies:
     "@docusaurus/core" "2.0.0-beta.9"
     "@docusaurus/types" "2.0.0-beta.9"
