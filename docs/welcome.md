@@ -10,11 +10,11 @@ sidebar_position: 1
 
 与 Create React App 功能类似，提供 快速创建项目功能
 
-具体文档可查看 [`lark-cli`](/docs/lark-cli)
+具体文档可查看 [`lark-cli`](/docs/lark-cli/入门)
 
 ## Lark CLI Service
 
 主要功能参考 react-scripts，做了一些特殊封装，可快速创建项目、构建项目，基本零配置
 
-具体文档可查看 [`lark-cli-service`](/docs/lark-cli-service)
+具体文档可查看 [`lark-cli-service`](/docs/lark-cli-service/开始)
 

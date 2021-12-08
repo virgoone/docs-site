@@ -1,14 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/duotoneLight');
-const darkCodeTheme = require('prism-react-renderer/themes/duotoneDark');
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Lark',
   tagline: 'Lark Tools are cool',
-  url: 'https://lark-tools.netifly.app',
+  url: 'https://lark-dev.netifly.app',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -24,13 +21,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/lark-org/docs-site/edit/main/docs/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+            'https://github.com/lark-org/docs-site/edit/main/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,11 +39,40 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        // "light" | "dark"
+        defaultMode: 'dark',
+
+        // Hides the switch in the navbar
+        // Useful if you want to support a single color mode
+
+        // Should we use the prefers-color-scheme media-query,
+        // using user system preferences, instead of the hardcoded defaultMode
+        respectPrefersColorScheme: false,
+
+        // Dark/light switch icon options
+        switchConfig: {
+          // Icon for the switch while in dark mode
+          darkIcon: '  ',
+          darkIconStyle: {
+            marginTop: '1px',
+          },
+          lightIcon: '  ',
+          lightIconStyle: {
+            marginTop: '1px',
+          },
+        },
+      },
+      algolia: {
+        apiKey: '35206ba871118e4dab004adf8526deab',
+        indexName: 'docs',
+      },
       navbar: {
         title: '',
         logo: {
           alt: 'Lark Tools Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-light.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
@@ -63,12 +89,43 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        links: [
+          {
+            title: 'Company',
+            items: [
+              {
+                label: 'Blog',
+                to: 'https://blog.marryto.me/blog',
+              },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/virgoone',
+              },
+            ],
+          },
+          {
+            title: 'Project',
+            items: [
+              {
+                label: 'React Cool Image',
+                href: 'https://react-cool-image.netlify.app/',
+              },
+            ],
+          },
+        ],
         copyright: `Copyright © ${new Date().getFullYear()} Lark, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        defaultLanguage: 'js',
+        additionalLanguages: ['dart'],
+        plugins: ['line-numbers', 'show-language'],
+        theme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
+        darkTheme: require('@kiwicopple/prism-react-renderer/themes/vsDark'),
       },
       gtag: {
         trackingID: 'G-VQL73B4GPD',
