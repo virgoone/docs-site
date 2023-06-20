@@ -15,6 +15,7 @@
     "incremental": true,
     "allowJs": false,
     "types": ["next"],
+    "baseUrl": ".",
     "paths": {
       "@assets/*": ["public/assets/*"],
       "@components/*": ["components/*"]

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dev.douni.one
+
+# Sitemaps
+Sitemap: https://dev.douni.one/sitemap.xml

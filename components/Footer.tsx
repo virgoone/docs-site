@@ -48,18 +48,6 @@ const navigation = {
     //   href: "https://turbo.build/discord",
     // },
   ],
-  company: () => [
-    { name: "Vercel", href: "https://vercel.com" },
-    {
-      name: "Open Source Software",
-      href: "https://vercel.com/oss?utm_source=turbo.build&utm_medium=referral&utm_campaign=footer-ossLink",
-    },
-    {
-      name: "Contact Sales",
-      href: `https://vercel.com/${"contact/sales"}?utm_source=turbo.build&utm_medium=referral&utm_campaign=footer-enterpriseLink`,
-    },
-    { name: "Twitter", href: "https://twitter.com/vercel" },
-  ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
