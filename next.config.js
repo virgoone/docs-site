@@ -31,7 +31,7 @@ const nextConfig = withNextra({
     return [
       {
         source: "/docs",
-        destination: "/docs/getting-started",
+        destination: "/docs/welcome",
         statusCode: 301,
       },
     ];
