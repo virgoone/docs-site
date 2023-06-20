@@ -1,0 +1,10 @@
+{
+  "base": "Base",
+  "variables": "Variables",
+  "paths": "Paths",
+  "style": "Style",
+  "babel": "Babel",
+  "eslint": "ESLint",
+  "webpack": "Webpack",
+  "experimental": "Experimental"
+}

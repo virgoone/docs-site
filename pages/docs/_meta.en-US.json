@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome",
+  "getting-started": "Getting Started",
+  "configuration": "Configuration",
+  "template": "Template",
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "change-log": {
+    "title": "ChangeLog",
+    "href": "https://github.com/lark-org/lark-cli/releases",
+    "newWindow": true
+  }
+}

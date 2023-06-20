@@ -1,0 +1,55 @@
+---
+title: Webpack
+description: Custom Webpack
+---
+
+## Default
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    return {
+      plugins: [],
+    }
+  },
+};
+```
+
+## configureWebpack
+
+`(config: WebpackConfig) => WebpackConfig` or `(config: WebpackConfig) => void`
+
+Config is the final generated webpack config. If the function has a return value, `webpack-merge` with the original config.
+You can also modify the original `config` directly, but do not return anything
+
+
+example:
+
+```js filename="lark.config.js"
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    return {
+      plugins: [new ESLintPlugin()],
+    }
+  },
+};
+```
+
+Modify directly without returning content:
+
+```js filename="lark.config.js"
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    config.plugins.push(new ESLintPlugin())
+  },
+};
+```
+
+Any Webpack configuration options: https://webpack.js.org/configuration/

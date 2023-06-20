@@ -1,0 +1,139 @@
+---
+title: Mobile
+---
+import Image from 'next/image'
+
+## Mobile Template
+
+The template provides the basic home page and playground page, provides minimum configuration, and has not been connected to the UI library yet. Different from the default template, it provides polyfill and mobile end debugging tool eruda, and will add the mobile end component library and mobile end adaptation later.
+
+### Code example
+
+```typescript
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import 'normalize.css'
+import '@/style/index.less'
+import App from './App'
+
+
+const container = document.getElementById('root')
+const root = createRoot(container as HTMLElement)
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+window.__APP_LOADED__ = true
+
+```
+
+### Eruda
+
+```html
+<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/eruda/2.4.1/eruda.min.js"></script>
+<script>
+  eruda.init();
+</script>
+```
+
+### Polyfill
+
+```html
+<script
+  src="https://polyfill.alicdn.com/polyfill.min.js?ua=Android%204.2&features=WeakMap,Object.setPrototypeOf,Object.assign">
+</script>
+```
+
+### Router Example
+
+```typescript
+import React from 'react'
+import Loadable from '@/components/loadable'
+import PageFailed from '@/components/page-failed'
+import PageLoading from '@/components/page-loading'
+import { AjaxError } from '@/components/loadable/Loadable'
+
+export interface RouteConf {
+  key?: string
+  path: string
+  component: string | any
+  name?: string
+}
+
+function PageNotFound() {
+  return <PageFailed code={404} message="ERR_NOT_FOUND" />
+}
+
+interface RouteInitOpts {
+  filePath?: string
+  Loading?: () => JSX.Element
+}
+
+function createRoute(path: string, options: RouteInitOpts = {}) {
+  const { filePath = path, Loading = PageLoading } = options
+  const Failed = PageFailed
+  const onError = (err: AjaxError) => {
+    console.error(err)
+  }
+
+  if (__DEV__) {
+    console.log(`@/pages/${filePath.slice(1)}/page`)
+    const component = Loadable.loadWithInitialProps(
+      require(`@/pages/${filePath.slice(1)}/page`),
+      { codeSplitting: false, Failed, onError, Loading }
+    )
+
+    return {
+      path,
+      component,
+      key: path
+    }
+  }
+
+  const component = Loadable.loadWithInitialProps(
+    () =>
+      import(
+        /* webpackChunkName: "[request]" */
+        `@/pages/${filePath.slice(1)}/page`
+      ),
+    { Failed, onError, Loading }
+  )
+
+  return {
+    path,
+    component,
+    filePath
+  }
+}
+
+let routes: RouteConf[] = [
+  createRoute('/', {
+    filePath: '/index'
+  })
+]
+
+if (__DEV__) {
+  routes = [
+    ...routes,
+    {
+      path: '/playground',
+      component: () =>
+        React.createElement(
+          Loadable.resolveChunk(require('@/pages/playground/page'))
+        )
+    }
+  ]
+}
+
+routes = [
+  ...routes,
+  {
+    path: '*',
+    component: PageNotFound
+  }
+]
+
+export default routes
+
+```

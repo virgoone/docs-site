@@ -1,0 +1,195 @@
+---
+title:  Getting Started
+---
+import { Tab, Tabs } from 'nextra-theme-docs'
+
+## Set up Lark CLI(new project)
+1. Install the latest version of the package from npm as global:
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab>
+    ```bash
+    pnpm add -g @lark-org/lark-cli
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    npm install -g @lark-org/lark-cli
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    yarn add --global @lark-org/lark-cli
+    ```
+  </Tab>
+</Tabs>
+
+2. Usage
+
+```bash
+lark create <project - name>
+```
+
+3. Open project
+
+```bash
+cd test-project
+```
+
+You can now start or build your app like normal:
+
+```bash
+npm start
+```
+
+```bash
+npm run build
+```
+
+### Demo
+
+![Lark-CLI](/assets/lark-cli/welcome.png)
+
+
+## Set up Lark CLI(existing project)
+
+1. Install the latest version of the package from npm as a dev dependency:
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab>
+    ```bash
+    pnpm add -D @lark-org/lark-cli
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    npm i -D @lark-org/lark-cli
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    yarn add -D @lark-org/lark-cli
+    ```
+  </Tab>
+</Tabs>
+
+2. Create a Lark configuration file in your project's root directory and [configure](./configuration/getting-started.md):
+
+   ```diff
+     my-app
+     ├── node_modules
+   + ├── lark.config.js
+     └── package.json
+   ```
+
+3. Update the existing calls to `react-scripts` in the `scripts` section of your `package.json` to use the `lark` CLI:
+
+```diff
+   "scripts": {
+   -  "start": "react-scripts start"
+   +  "start": "lark start"
+   -  "build": "react-scripts build"
+   +  "build": "lark build"
+   }
+   ```
+
+You can now start or build your app like normal:
+
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab>
+    ```bash
+    pnpm run start
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    npm run start
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    yarn start
+    ```
+  </Tab>
+</Tabs>
+
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab>
+    ```bash
+    pnpm run build
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    npm run build
+    ```
+  </Tab>
+  <Tab>
+    ```bash
+    yarn build
+    ```
+  </Tab>
+</Tabs>
+
+## Start configuring
+
+Check out the [configuration documentation](./configuration/base.md).
+
+## Project structure
+
+```
+.
+├── babel.config.js
+├── commitlint.config.js
+├── jest.config.js
+├── jsconfig.json
+├── lark.config.js
+├── package.json
+├── prettier.config.js
+├── public
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── loadable
+│   │   │   ├── Loadable.tsx
+│   │   │   ├── index.tsx
+│   │   │   ├── loadWithInitialProps.tsx
+│   │   │   └── shared.ts
+│   │   ├── page-failed
+│   │   │   ├── error-animation.json
+│   │   │   ├── index.tsx
+│   │   │   └── style.scss
+│   │   └── page-loading
+│   │       ├── animate.json
+│   │       ├── index.tsx
+│   │       └── style.scss
+│   ├── constants
+│   │   ├── api.ts
+│   │   └── index.ts
+│   ├── globals
+│   │   └── history.ts
+│   ├── index.html
+│   ├── index.tsx
+│   ├── pages
+│   │   ├── index
+│   │   │   ├── page.tsx
+│   │   │   └── style.scss
+│   │   └── playground
+│   │       ├── page.tsx
+│   │       └── style.scss
+│   ├── routes
+│   │   └── index.tsx
+│   ├── style
+│   │   ├── index.scss
+│   │   └── typeface.scss
+│   └── utils
+│       └── lottie.ts
+├── stylelint.config.js
+├── tsconfig.json
+├── types
+│   ├── custom-typings.d.ts
+│   └── index.d.ts
+└── yarn.lock
+```

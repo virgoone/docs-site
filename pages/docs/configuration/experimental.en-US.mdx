@@ -1,0 +1,44 @@
+---
+title:  试验性支持
+---
+
+***Lark CLI*** 脚手架试验性支持了 `esbuild`，作为 `babel`的替代，但为了兼容性考虑，只在 `__DEV__` 环境下生效，通过 [variables](./variables#variables__dev__) 开启，请不要在生产环境启用
+
+`esbuild` 可加快构建速度，具体使用介绍参考 `esbuild` 文档：https://esbuild.github.io/
+
+## 配置
+
+```javascript filename="lark.config.js"
+module.exports = {
+  build: {
+    mfsu: false,
+    transpiler: 'babel',
+    transpilerOptions: {},
+  },
+}
+
+```
+
+## build.mfsu
+
+`false`
+
+是否开启 `mfsu`，`mfsu`为 `umi@3.5+` 的一种打包提速方案，具体介绍：[什么是 mfsu](https://v3.umijs.org/zh-CN/docs/mfsu#%E4%BB%80%E4%B9%88%E6%98%AF-mfsu)
+
+> mfsu 是一种基于 webpack5 新特性 Module Federation 的打包提速方案。核心原理是将应用的依赖构建为一个 Module Federation 的 remote 应用，以免去应用热更新时对依赖的编译。
+
+> 因此，开启 mfsu 可以大幅减少热更新所需的时间。在生产模式，也可以通过提前编译依赖，大幅提升部署效率。
+
+`mfsu` 为试验性特性，当前开启后 `transpiler` 将不起作用，且不能和 `esbuild` 同时开启
+
+## build.transpiler
+
+`babel` or `esbuild`
+
+默认为`babel`，修改后，将会在开发环境默认使用 `esbuild` 打包`js`、`ts` 文件，可加快构建速度
+
+## build.transpilerOptions
+
+`BabelTranspilerOptions` or `EsbuildTranspilerOptions`
+
+根据`transpiler`修改构建配置，支持 `babel` or `esbuild` 的大部分参数

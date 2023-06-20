@@ -1,0 +1,15 @@
+{
+  "welcome": "欢迎",
+  "getting-started": "入门",
+  "configuration": "配置",
+  "template": "模版",
+  "-- More": {
+    "type": "separator",
+    "title": "More"
+  },
+  "change-log": {
+    "title": "更新日志",
+    "href": "https://github.com/lark-org/lark-cli/releases",
+    "newWindow": true
+  }
+}

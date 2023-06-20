@@ -1,0 +1,60 @@
+---
+title:  样式配置
+---
+
+## 样式支持
+
+默认不提供样式定制，***Lark CLI*** 已支持 ***less***、***scss***和***css modules***，如需要其他预处理器或者特殊配置，可修改 [***webpack***](./webpack) 配置
+
+### css modules
+
+默认通过query的方式支持modules，使用方式和其他框架略有区别
+
+使用方式：
+
+```tsx
+import React from 'react'
+import { Typography, Badge } from 'antd'
+import styles from './style/index.less?modules'
+
+function CustomTooltip(props: TooltipProps) {
+  const { formatter = (value) => value, color, name } = props
+  return (
+    <div className={styles['customer-tooltip']}>
+      <div className={styles['customer-tooltip-title']}>
+        <Text strong>{props.title}</Text>
+      </div>
+      <div>
+        {props.data.map((item, index) => (
+          <div className={styles['customer-tooltip-item']} key={index}>
+            <div>
+              <Badge color={color || item.color} />
+              {name || item.name}
+            </div>
+            <div>
+              <Text strong>{formatter(item.value)}</Text>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+```
+
+### less
+
+less可直接使用
+
+```jsx
+import styles from './style/index.less'
+```
+
+### scss
+
+scss同样
+
+```jsx
+import styles from './style/index.scss'
+```

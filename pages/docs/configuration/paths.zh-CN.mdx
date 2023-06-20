@@ -1,0 +1,60 @@
+---
+title: Paths 配置
+description: Custom Paths
+---
+
+## 默认
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  paths: {
+    // 可选，默认值 ./src/index.tsx
+    // appIndex,
+    // 可选，默认值 ./src
+    // appSrc,
+    // 可选，默认值 ./dist
+    // appBuild,
+    // 可选，默认值 ./public
+    // appPublic,
+    // 可选，默认值 ./yarn.lock
+    // yarnLockFile,
+    // 可选，默认值 ./package.json
+    // appPackageJson,
+  }
+};
+```
+
+## paths.appIndex
+
+`./src/index.tsx`
+默认入口文件地址
+
+## paths.appSrc
+
+`./src`
+默认文件目录，该目录会指定检查文件范围，加快构建
+
+## paths.appBuild
+
+`./dist`
+
+构建目录
+
+## paths.appPublic
+
+`./public`
+
+静态目录
+
+## paths.yarnLockFile
+
+`./yarn.lock`
+
+`yarn lock` 路径，如使用 `yarn`生效
+
+## paths.appPackageJson
+
+`./package.json`
+
+`package.json` 路径

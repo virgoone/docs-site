@@ -1,0 +1,99 @@
+---
+title:  Babel
+---
+
+## Babel支持
+
+***Lark CLI*** 默认支持的 ***babel*** 配置为：
+
+```javascript
+//...
+let environment = []
+
+if ((BABEL_ENV || NODE_ENV) === 'development') {
+  environment = [
+    shouldUseReactRefresh && require.resolve('react-refresh/babel'),
+    ['@babel/plugin-syntax-dynamic-import'],
+    ...(shouldUseMFSURefresh ? mfsu.getBabelPlugins() : [])
+  ].filter(Boolean)
+} else {
+  environment = [
+    '@babel/plugin-syntax-dynamic-import',
+    'babel-plugin-transform-react-remove-prop-types',
+    '@babel/plugin-transform-react-constant-elements'
+  ]
+}
+const config = {
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-typescript',
+    '@babel/preset-react'
+  ],
+  plugins: [
+    ...environment,
+    ['babel-plugin-module-resolver', resolverOpts],
+    '@babel/plugin-proposal-object-rest-spread',
+    ['@babel/plugin-proposal-decorators', { legacy: true }],
+    '@babel/plugin-proposal-class-properties',
+    'babel-plugin-macros',
+    '@babel/plugin-transform-runtime'
+  ]
+}
+//...
+```
+
+## Babel 自定义
+
+可自己在项目根目录创建 `babel.config.js`，***Lark CLI*** 会默认读取该配置文件，与 `babel` 配置文件无区别
+
+示例：
+
+```javascript filename="babel.config.js"
+module.exports = (api) => {
+  return {
+    plugins: []
+  }
+}
+
+```
+
+### 覆盖默认 `babel` 配置
+覆盖 ***Lark CLI*** 默认 `babel` 配置，可通过传入字段 `overrides` 覆盖
+
+示例：
+
+```javascript filename="babel.config.js"
+module.exports = (api) => {
+  return {
+    overrides: true,
+    presets: [
+      '@babel/preset-env',
+      '@babel/preset-typescript',
+      '@babel/preset-react'
+    ],
+    plugins: [
+      ['babel-plugin-module-resolver', resolverOpts],
+      '@babel/plugin-proposal-object-rest-spread',
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+      '@babel/plugin-proposal-class-properties',
+      'babel-plugin-macros',
+      '@babel/plugin-transform-runtime'
+    ]
+  }
+}
+
+```
+
+### 其他方式修改配置
+
+```javascript filename="lark.config.js"
+module.exports = {
+  build: {
+    mfsu: false,
+    transpiler: 'babel',
+    transpilerOptions: {},
+  },
+}
+
+```
+通过添加`transpilerOptions`可修改默认 `babel` 配置

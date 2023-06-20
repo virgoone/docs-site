@@ -1,0 +1,97 @@
+---
+title: 变量配置
+description: Custom Variables
+---
+
+## 默认
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  variables: {
+    // 必选
+    SENTRY_DSN: undefined,
+
+    // 必选，网页标题
+    APP_TITLE: '<%= title %>',
+
+    // 可选，start 时默认为 true，build 时默认为 false
+    // __DEV__,
+
+    // 可选，当前 Commit hash
+    // GIT_COMMIT_SHA,
+
+    // 可选
+    // SENTRY_RELEASE: `${APP_ENV}-${GIT_COMMIT_SHA.substr(0, 7)}`,
+
+    // 可选，从process.env获取
+    // APP_ENV,
+
+    // 可选，默认值从 package.json 中获取
+    // APP_NAME,
+
+    // 可选
+    // PUBLIC_PATH,
+
+    // 可选
+    // PUBLIC_PATH_FALLBACK,
+
+    // 可选
+    // CDN_VENDOR_HOST,
+
+    // 可选
+    // CDN_VENDOR_HOST_FALLBACK,
+
+    // 可选
+    // CDN_VENDOR_PUBLIC_URL,
+
+    // 可选
+    // CDN_HOST_FALLBACK: FAAS_CDN_HOST_FALLBACK,
+
+    // 可选
+    // CDN_HOST: FAAS_CDN_HOST,
+  }
+};
+```
+
+## variables.SENTRY_DSN
+
+`undefined`
+
+如需开启`Sentry`，需传入该配置
+
+## variables.APP_TITLE
+
+`undefined`
+
+网页标题
+
+## variables.`__DEV__`
+
+`start?true:false`
+
+默认环境判断
+
+## variables.GIT_COMMIT_SHA
+
+`${Commit hash}`
+
+默认当前最后一次提交的Hash
+
+## variables.SENTRY_RELEASE
+
+`${APP_ENV}-${GIT_COMMIT_SHA.substr(0, 7)}`
+
+默认当前环境和`Git Commit hash`，传入`Sentry DSN`时，该项会生效
+
+## variables.APP_ENV
+
+`${process.env.APP_ENV}`
+
+部署时，该项值必填
+
+## variables.PUBLIC_PATH
+
+`/`
+
+同 `webpack public path`

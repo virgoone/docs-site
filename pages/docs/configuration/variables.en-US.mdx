@@ -1,0 +1,97 @@
+---
+title: Variables
+description: Custom Variables
+---
+
+## Default
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  variables: {
+    // Required
+    SENTRY_DSN: undefined,
+
+    // Required，Page title
+    APP_TITLE: '<%= title %>',
+
+    // Optional，Defaults to true at start, false at build
+    // __DEV__,
+
+    // Optional，Commit hash
+    // GIT_COMMIT_SHA,
+
+    // Optional
+    // SENTRY_RELEASE: `${APP_ENV}-${GIT_COMMIT_SHA.substr(0, 7)}`,
+
+    // Optional，Get from process.env
+    // APP_ENV,
+
+    // Optional，The default value is obtained from package.json
+    // APP_NAME,
+
+    // Optional
+    // PUBLIC_PATH,
+
+    // Optional
+    // PUBLIC_PATH_FALLBACK,
+
+    // Optional
+    // CDN_VENDOR_HOST,
+
+    // Optional
+    // CDN_VENDOR_HOST_FALLBACK,
+
+    // Optional
+    // CDN_VENDOR_PUBLIC_URL,
+
+    // Optional
+    // CDN_HOST_FALLBACK: FAAS_CDN_HOST_FALLBACK,
+
+    // Optional
+    // CDN_HOST: FAAS_CDN_HOST,
+  }
+};
+```
+
+## variables.SENTRY_DSN
+
+`undefined`
+
+To enable `Sentry`, you need to pass in this configuration
+
+## variables.APP_TITLE
+
+`undefined`
+
+Page title
+
+## variables.`__DEV__`
+
+`start?true:false`
+
+Default environment judgment
+
+## variables.GIT_COMMIT_SHA
+
+`${Commit hash}`
+
+Default current last committed hash
+
+## variables.SENTRY_RELEASE
+
+`${APP_ENV}-${GIT_COMMIT_SHA.substr(0, 7)}`
+
+Default current environment and `Git Commit hash`, this will take effect when `Sentry DSN` is passed in
+
+## variables.APP_ENV
+
+`${process.env.APP_ENV}`
+
+When deploying, this value is required
+
+## variables.PUBLIC_PATH
+
+`/`
+
+Consistent with `webpack public path`

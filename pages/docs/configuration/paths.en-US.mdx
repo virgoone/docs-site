@@ -1,0 +1,60 @@
+---
+title: Paths
+description: Custom Paths
+---
+
+## Default
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  paths: {
+    // Optional，default value: ./src/index.tsx
+    // appIndex,
+    // Optional，default value: ./src
+    // appSrc,
+    // Optional，default value: ./dist
+    // appBuild,
+    // Optional，default value: ./public
+    // appPublic,
+    // Optional，default value: ./yarn.lock
+    // yarnLockFile,
+    // Optional，default value: ./package.json
+    // appPackageJson,
+  },
+};
+```
+
+## paths.appIndex
+
+`./src/index.tsx`
+Default entry file
+
+## paths.appSrc
+
+`./src`
+Default file directory, which specifies the inspection file range to speed up builds
+
+## paths.appBuild
+
+`./dist`
+
+Build directory
+
+## paths.appPublic
+
+`./public`
+
+Static directory
+
+## paths.yarnLockFile
+
+`./yarn.lock`
+
+`yarn lock` path, if `yarn` is used
+
+## paths.appPackageJson
+
+`./package.json`
+
+`package.json` path

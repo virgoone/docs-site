@@ -1,0 +1,36 @@
+{
+  "*": {
+    "type": "page"
+  },
+  "index": {
+    "display": "hidden",
+    "theme": {
+      "layout": "raw",
+      "sidebar": false,
+      "toc": true
+    }
+  },
+  "docs": {
+    "title": "文档",
+    "type": "page"
+  },
+  "examples": {
+    "title": "示例",
+    "type": "page"
+  },
+  "blog": {
+    "title": "博客",
+    "type": "page",
+    "theme": {
+      "sidebar": false
+    }
+  },
+  "terms": {
+    "title": "用户使用条款",
+    "display": "hidden"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "display": "hidden"
+  }
+}

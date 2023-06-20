@@ -1,0 +1,83 @@
+---
+title:  Base
+---
+
+## Creating the file
+
+Lark CLI can be configured in a file with any of the following names:
+
+1. `lark.config.js`
+
+## Default Config
+
+```javascript filename="lark.config.js"
+module.exports = {
+  variables: {
+    // Required
+    SENTRY_DSN: undefined,
+
+    // Required，Page title
+    APP_TITLE: '<%= title %>',
+
+    // Optional，Defaults to true at start, false at build
+    // __DEV__,
+
+    // Optional，Commit hash
+    // GIT_COMMIT_SHA,
+
+    // Optional
+    // SENTRY_RELEASE: `${APP_ENV}-${GIT_COMMIT_SHA.substr(0, 7)}`,
+
+    // Optional，Get from process.env
+    // APP_ENV,
+
+    // Optional，The default value is obtained from package.json
+    // APP_NAME,
+
+    // Optional
+    // PUBLIC_PATH,
+
+    // Optional
+    // PUBLIC_PATH_FALLBACK,
+
+    // Optional
+    // CDN_VENDOR_HOST,
+
+    // Optional
+    // CDN_VENDOR_HOST_FALLBACK,
+
+    // Optional
+    // CDN_VENDOR_PUBLIC_URL,
+
+    // Optional
+    // CDN_HOST_FALLBACK: FAAS_CDN_HOST_FALLBACK,
+
+    // Optional
+    // CDN_HOST: FAAS_CDN_HOST,
+  },
+  paths: {
+    // Optional，default value: ./src/index.tsx
+    // appIndex,
+    // Optional，default value: ./src
+    // appSrc,
+    // Optional，default value: ./dist
+    // appBuild,
+    // Optional，default value: ./public
+    // appPublic,
+    // Optional，default value: ./yarn.lock
+    // yarnLockFile,
+    // Optional，default value: ./package.json
+    // appPackageJson,
+  },
+  configureWebpack: config => {
+    // Config is the final generated webpack config. If the function has a return value, webpack-merge with the original config.
+    // You can directly modify the original config, but do not return anything
+    return {
+      plugins: [],
+    }
+  },
+}
+
+```
+
+If a new project is created through lark cli, the above configuration will be added by default. If there are other needs, you can modify it as needed

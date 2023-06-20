@@ -1,0 +1,10 @@
+{
+  "base": "基础",
+  "variables": "Variables",
+  "paths": "Paths",
+  "style": "样式",
+  "babel": "Babel",
+  "eslint": "ESLint",
+  "webpack": "Webpack",
+  "experimental": "试验性"
+}

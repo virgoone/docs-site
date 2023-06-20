@@ -1,0 +1,54 @@
+---
+title: Webpack 配置
+description: Custom Webpack
+---
+
+## 默认
+
+```js filename="lark.config.js"
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    return {
+      plugins: [],
+    }
+  },
+};
+```
+
+## configureWebpack
+
+`(config: WebpackConfig) => WebpackConfig` or `(config: WebpackConfig) => void`
+
+`config` 即为最终生成的 `webpack config`，若函数有返回值则与原 `config` 进行 `webpack-merge`
+也可直接修改原 `config`，但不要返回任何内容
+
+示例：
+
+```js filename="lark.config.js"
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    return {
+      plugins: [new ESLintPlugin()],
+    }
+  },
+};
+```
+
+直接修改，不返回内容:
+
+```js filename="lark.config.js"
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+module.exports = {
+  // ...
+  configureWebpack: config => {
+    config.plugins.push(new ESLintPlugin())
+  },
+};
+```
+
+Webpack 配置参考: https://webpack.js.org/configuration/

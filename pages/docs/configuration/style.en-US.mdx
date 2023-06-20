@@ -1,0 +1,60 @@
+---
+title:  Style
+---
+
+## Style support
+
+By default, style customization is not provided, ***Lark CLI*** already supports ***less***、***scss*** and ***css modules***, if you need other preprocessors or special configuration, you can modify the [*** webpack ***](./ webpack) configuration
+
+### css modules
+
+By default, modules are supported by query, and the usage method is slightly different from other frameworks
+
+Demo:
+
+```tsx
+import React from 'react'
+import { Typography, Badge } from 'antd'
+import styles from './style/index.less?modules'
+
+function CustomTooltip(props: TooltipProps) {
+  const { formatter = (value) => value, color, name } = props
+  return (
+    <div className={styles['customer-tooltip']}>
+      <div className={styles['customer-tooltip-title']}>
+        <Text strong>{props.title}</Text>
+      </div>
+      <div>
+        {props.data.map((item, index) => (
+          <div className={styles['customer-tooltip-item']} key={index}>
+            <div>
+              <Badge color={color || item.color} />
+              {name || item.name}
+            </div>
+            <div>
+              <Text strong>{formatter(item.value)}</Text>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+```
+
+### less
+
+Less direct use
+
+```jsx
+import styles from './style/index.less'
+```
+
+### scss
+
+SCSS also
+
+```jsx
+import styles from './style/index.scss'
+```
