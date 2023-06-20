@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useState, ReactNode, ReactElement } from "react";
 import cn from "clsx";
 import { ThemeSwitch } from "nextra-theme-docs";
-import VercelLogo from "./logos/vercel";
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   const classes =
@@ -29,20 +28,20 @@ function FooterHeader({ children }: { children: ReactNode }) {
 const navigation = {
   general: [
     { name: "Blog", href: "/blog" },
-    { name: "Releases", href: "https://github.com/vercel/turbo/releases" },
+    { name: "Releases", href: "https://github.com/lark-org/lark-cli/releases" },
   ],
   repo: [
     { name: "Documentation", href: "/docs" },
     {
       name: "API Reference",
-      href: "/docs/reference/command-line-reference",
+      href: "/docs/configuration/base",
     },
-    { name: "FAQ", href: "/docs/faq" },
+    // { name: "FAQ", href: "/docs/faq" },
   ],
   support: [
     {
       name: "GitHub",
-      href: "https://github.com/lark-org/docs-site",
+      href: "https://github.com/virgoone/docs-site",
     },
     // {
     //   name: "Discord",
@@ -131,15 +130,6 @@ export function FooterContent() {
 
         <div className="pt-8 mt-8 sm:flex sm:items-center sm:justify-between">
           <div>
-            <a
-              className="text-current"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="douni.one homepage"
-              href="https://vercel.com?utm_source=turbo.build&utm_medium=referral&utm_campaign=footer-logoLink"
-            >
-              <VercelLogo />
-            </a>
             <p className="mt-4 text-xs text-gray-500 dark:text-[#888888]">
               &copy; {new Date().getFullYear()} Lark ORG, Inc. All rights
               reserved.

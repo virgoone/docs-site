@@ -12,7 +12,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 2,
   },
-  docsRepositoryBase: "https://github.com/lark-org/docs-site/blob/main/pages",
+  docsRepositoryBase: "https://github.com/virgoone/docs-site/blob/main/pages",
   useNextSeoProps: function SEO() {
     const { frontMatter } = useConfig();
 
