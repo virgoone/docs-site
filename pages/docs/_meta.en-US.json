@@ -11,5 +11,10 @@
     "title": "ChangeLog",
     "href": "https://github.com/lark-org/lark-cli/releases",
     "newWindow": true
+  },
+  "old-version": {
+    "title": "Old Version",
+    "href": "https://v0-dev.douni.one",
+    "newWindow": true
   }
 }

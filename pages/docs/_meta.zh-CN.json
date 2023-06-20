@@ -11,5 +11,10 @@
     "title": "更新日志",
     "href": "https://github.com/lark-org/lark-cli/releases",
     "newWindow": true
+  },
+  "old-version": {
+    "title": "旧版本",
+    "href": "https://v0-dev.douni.one",
+    "newWindow": true
   }
 }
