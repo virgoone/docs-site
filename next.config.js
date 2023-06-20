@@ -16,17 +16,17 @@ const nextConfig = withNextra({
     locales: ["zh-CN", "en-US"],
     defaultLocale: "en-US",
   },
-  rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/sitemap.xml",
-          destination:
-            "https://crawled-sitemap.vercel.sh/turbobuild-sitemap.xml",
-        },
-      ],
-    };
-  },
+  // rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //       {
+  //         source: "/sitemap.xml",
+  //         destination:
+  //           "https://crawled-sitemap.vercel.sh/turbobuild-sitemap.xml",
+  //       },
+  //     ],
+  //   };
+  // },
   redirects: () => {
     return [
       {
