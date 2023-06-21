@@ -25,6 +25,10 @@
       "sidebar": false
     }
   },
+  "confirm": {
+    "title": "确认",
+    "display": "hidden"
+  },
   "terms": {
     "title": "用户使用条款",
     "display": "hidden"

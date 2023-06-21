@@ -25,6 +25,10 @@
       "sidebar": false
     }
   },
+  "confirm": {
+    "title": "Confirm",
+    "display": "hidden"
+  },
   "terms": {
     "title": "Terms of Service",
     "display": "hidden"

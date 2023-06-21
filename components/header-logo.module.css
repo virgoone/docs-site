@@ -5,3 +5,10 @@
     display: block;
   }
 }
+.larkLogo {
+  --lark-color: #101e46;
+}
+
+:global(.dark) .larkLogo {
+  --lark-color: #6BCB93;
+}

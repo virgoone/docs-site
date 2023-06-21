@@ -9,21 +9,11 @@ type LogoProps = {
   height?: number;
 };
 
-const svgColor = {
-  dark: {
-    gFill: "#101e46",
-  },
-  light: {
-    gFill: "#6BCB93",
-  },
-};
-
 const TurboAnimated = ({ height = 32, className = "" }: LogoProps) => {
-  const { theme = "dark" } = useTheme();
-  const color = svgColor[theme]?.gFill || "#101e46";
+  const color = 'var(--lark-color)';
   return (
     <svg
-      className={className}
+      className={cn(className, styles.larkLogo)}
       height={height}
       viewBox="0 0 300 79"
       fill="none"

@@ -55,7 +55,7 @@ const config: DocsThemeConfig = {
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
 
-    const imageUrl = new URL("https://swr-card.vercel.app");
+    const imageUrl = new URL("https://dev.douni.one/api/og");
 
     if (!/\/index\.+/.test(route)) {
       imageUrl.searchParams.set("title", title || titleSuffix);
@@ -98,7 +98,7 @@ const config: DocsThemeConfig = {
         <meta name="apple-mobile-web-app-title" content="SWR" />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
+        <meta name="twitter:site" content="@koya.guo" />
         <meta name="twitter:image" content={ogImage} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
