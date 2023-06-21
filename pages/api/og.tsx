@@ -67,13 +67,7 @@ export default async function openGraphImage(
 
     // ?title=<title>
     const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")?.slice(0, 100)
-      : type === "pack"
-      ? "The successor to Webpack"
-      : type === "repo"
-      ? "The build system that makes ship happen"
-      : "";
+    const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "";
 
     return new ImageResponse(createElement(OGImage, { title, type, bg }), {
       width: 1200,
@@ -117,8 +111,8 @@ export function OGImage({
       }}
     >
       {/* eslint-disable-next-line  @next/next/no-img-element, jsx-a11y/alt-text */}
-      <div style={{ display: "flex", height: 97 * 1.1, alignItems: "center" }}>
-        <Logo height={103 * 1.1} width={697 * 1.1} />
+      <div style={{ display: "flex", height: 79 * 1.1, alignItems: "center" }}>
+        <Logo height={79 * 1.1} width={300 * 1.1} />
       </div>
       {title ? (
         <div
