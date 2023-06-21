@@ -109,7 +109,7 @@ export function FooterContent() {
           <div className="mt-12 xl:!mt-0">
             <FooterHeader>Subscribe to our newsletter</FooterHeader>
             <p className="mt-4 text-sm text-gray-600 dark:text-[#888888]">
-              Subscribe to the Turbo newsletter and stay updated on new releases
+              Subscribe to the Lark ORG newsletter and stay updated on new releases
               and features, guides, and case studies.
             </p>
             <SubmitForm />
