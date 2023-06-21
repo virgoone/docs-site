@@ -13,8 +13,8 @@ function dateSortDesc(a, b) {
 
 async function generate() {
   const feed = new RSS({
-    title: "Turbo Blog",
-    description: "Turbo news, updates, and announcements.",
+    title: "Lark CLI Blog",
+    description: "Lark CLI news, updates, and announcements.",
     site_url: "https://dev.douni.one",
     feed_url: "https://dev.douni.one/feed.xml",
     image_url: "https://dev.douni.one/api/og",
@@ -24,7 +24,7 @@ async function generate() {
 
   const sortedData = [];
   for (const post of posts) {
-    if (post.startsWith("index.") || post.startsWith("_meta.json")) continue;
+    if (post.startsWith("index.") || post.endsWith(".json")) continue;
     const file = await fs.readFile(
       path.join(__dirname, "..", "pages", "blog", post)
     );
@@ -37,7 +37,7 @@ async function generate() {
   for (const frontmatter of sortedData) {
     // get the og image size
     const stat = statSync(
-      path.join(__dirname, "..", "public", frontmatter.data.ogImage)
+      path.join(__dirname, "..", "public", frontmatter.data.ogImage || 'og-image.png')
     );
     feed.item({
       title: frontmatter.data.title,
