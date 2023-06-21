@@ -11,8 +11,8 @@ export const languageMap = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const titleMap = {
-  "en-US": "React Hooks for Data Fetching",
-  "zh-CN": "用于数据请求的 React Hooks 库",
+  "en-US": "Lark CLI - CREATE REACT APP CONFIGURATION OVERRIDE",
+  "zh-CN": "Lark CLI - CREATE REACT APP 替换实现",
 };
 
 /** @type {Readonly<Record<Locale, {lightweight:string;realtime?:string;suspense?:string;pagination?:string;backendAgnostic?:string;renderingStrategies?:string;typescript?:string;remoteLocal?:string;}>>} */
