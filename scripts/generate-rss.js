@@ -33,19 +33,34 @@ async function generate() {
 
   // sort by date
   sortedData.sort(dateSortDesc);
+  const languageMap = {
+    "en-US": "en-us",
+    "zh-CN": "zh-cn",
+  };
+  const defaultLanguage = "en-US";
 
   for (const frontmatter of sortedData) {
     // get the og image size
     const stat = statSync(
-      path.join(__dirname, "..", "public", frontmatter.data.ogImage || 'og-image.png')
+      path.join(
+        __dirname,
+        "..",
+        "public",
+        frontmatter.data.ogImage || "og-image.png"
+      )
     );
+    const [slug, lan = ""] = frontmatter.slug.split(".");
     feed.item({
       title: frontmatter.data.title,
-      url: "https://dev.douni.one/blog/" + frontmatter.slug, // intentionally including slash here
+      url: `https://dev.douni.one${
+        lan && lan !== defaultLanguage ? "/" + lan : ""
+      }/blog/${slug}`, // intentionally including slash here
       date: frontmatter.data.date,
       description: frontmatter.data.description,
+      language: languageMap[lan] || "en-us",
       enclosure: {
-        url: "https://dev.douni.one" + frontmatter.data.ogImage || 'og-image.png', // intentionally omitting slash here
+        url:
+          "https://dev.douni.one" + frontmatter.data.ogImage || "og-image.png", // intentionally omitting slash here
         type: "image/png",
         size: stat.size,
       },

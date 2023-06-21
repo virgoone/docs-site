@@ -8,7 +8,8 @@
     "build": "next build ",
     "lint": "next lint",
     "rss": "node scripts/generate-rss.js",
-    "postbuild": "next-sitemap && pnpm run rss",
+    "sitemap": "next-sitemap",
+    "postbuild": "pnpm run sitemap && pnpm run rss",
     "lint:prettier": "prettier -c . --cache --ignore-path=../.prettierignore"
   },
   "dependencies": {
