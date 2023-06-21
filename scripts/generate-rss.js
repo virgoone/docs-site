@@ -45,7 +45,7 @@ async function generate() {
       date: frontmatter.data.date,
       description: frontmatter.data.description,
       enclosure: {
-        url: "https://dev.douni.one" + frontmatter.data.ogImage, // intentionally omitting slash here
+        url: "https://dev.douni.one" + frontmatter.data.ogImage || 'og-image.png', // intentionally omitting slash here
         type: "image/png",
         size: stat.size,
       },
