@@ -33,10 +33,6 @@ async function generate() {
 
   // sort by date
   sortedData.sort(dateSortDesc);
-  const languageMap = {
-    "en-US": "en-us",
-    "zh-CN": "zh-cn",
-  };
   const defaultLanguage = "en-US";
 
   for (const frontmatter of sortedData) {
@@ -57,7 +53,7 @@ async function generate() {
       }/blog/${slug}`, // intentionally including slash here
       date: frontmatter.data.date,
       description: frontmatter.data.description,
-      language: languageMap[lan] || "en-us",
+      language: lan,
       enclosure: {
         url:
           "https://dev.douni.one" + frontmatter.data.ogImage || "og-image.png", // intentionally omitting slash here
